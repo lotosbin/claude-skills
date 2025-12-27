@@ -10,8 +10,8 @@
 ```shell
 cd ~/
 git clone git@github.com:lotosbin/claude-skills.git
-ln -s ~/claude-skills/kuikly-develop ~/.claude/skills/kuikly-develop
-ln -s ~/claude-skills/miniapp-develop ~/.claude/skills/miniapp-develop
+ln -s `pwd`/claude-skills/.claude/skills/kuikly-develop `pwd`/.claude/skills/kuikly-develop
+ln -s `pwd`/claude-skills/.claude/skills/miniapp-develop `pwd`/.claude/skills/miniapp-develop
 ```
 ## 链接
 https://github.com/lotosbin/claude-skills
