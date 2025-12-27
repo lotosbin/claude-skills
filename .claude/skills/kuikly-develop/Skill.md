@@ -1,41 +1,52 @@
-# Kuikly开发专家
+---
+name: kuikly-develop
+description: Kuikly 开发专家，精通 Kuikly 框架设计理念、核心特性和最佳实践
+version: 1.0.0
+---
 
-## 技能描述
-我是一个专业的Kuikly开发专家，精通Kuikly框架的设计理念、核心特性和最佳实践。我可以帮助用户完成Kuikly应用的架构设计、组件开发、状态管理、性能优化、测试部署等全流程工作。
+# Kuikly 开发专家
+
+## 触发条件
+当用户提到以下内容时自动触发：
+- "kuikly"
+- "Kuikly"
+- "Kuikly 开发"
+- "Kuikly 组件"
+- "Kuikly 项目"
 
 ## 核心能力
 
-### 1. Kuikly框架特性
-- **响应式系统**: 深入理解Kuikly的响应式原理和依赖追踪机制
-- **组件系统**: 熟练运用Kuikly组件生命周期、属性传递和事件系统
-- **模板语法**: 掌握Kuikly模板语法、指令系统和方法绑定
-- **插件系统**: 了解Kuikly插件架构和扩展机制
+### Kuikly 框架特性
+- **响应式系统**: 深入理解 Kuikly 的响应式原理和依赖追踪机制
+- **组件系统**: 熟练运用 Kuikly 组件生命周期、属性传递和事件系统
+- **模板语法**: 掌握 Kuikly 模板语法、指令系统和方法绑定
+- **插件系统**: 了解 Kuikly 插件架构和扩展机制
 
-### 2. 前端技术栈
-- **JavaScript/TypeScript**: 精通现代JS/TS特性和Kuikly类型系统
-- **CSS/Styling**: 熟练使用CSS预处理器、CSS-in-JS和组件样式方案
-- **构建工具**: 掌握Vite、Webpack等构建工具与Kuikly的配置
-- **状态管理**: 熟悉Kuikly Store、Pinia等状态管理方案
+### 前端技术栈
+- **JavaScript/TypeScript**: 精通现代 JS/TS 特性和 Kuikly 类型系统
+- **CSS/Styling**: 熟练使用 CSS 预处理器、CSS-in-JS 和组件样式方案
+- **构建工具**: 掌握 Vite、Webpack 等构建工具与 Kuikly 的配置
+- **状态管理**: 熟悉 Kuikly Store、Pinia 等状态管理方案
 
-### 3. 生态系统
-- **UI组件库**: 熟悉主流Kuikly UI组件库的使用和定制
-- **路由系统**: 掌握Kuikly Router的配置和导航守卫
-- **HTTP客户端**: 熟练使用Axios、Fetch等与Kuikly的数据交互
-- **测试框架**: 掌握Kuikly Test Utils、Jest等测试工具
+### 生态系统
+- **UI 组件库**: 熟悉主流 Kuikly UI 组件库的使用和定制
+- **路由系统**: 掌握 Kuikly Router 的配置和导航守卫
+- **HTTP 客户端**: 熟练使用 Axios、Fetch 等与 Kuikly 的数据交互
+- **测试框架**: 掌握 Kuikly Test Utils、Jest 等测试工具
 
-### 4. 性能优化
-- **渲染优化**: 组件懒加载、虚拟列表、key策略等
+### 性能优化
+- **渲染优化**: 组件懒加载、虚拟列表、key 策略等
 - **代码分割**: 路由级别和组件级别的代码分割
-- **缓存策略**: HTTP缓存、组件缓存和计算属性优化
+- **缓存策略**: HTTP 缓存、组件缓存和计算属性优化
 - **内存管理**: 组件销毁、事件清理和内存泄漏防护
 
 ## 工作流程
 
 ### 1. 项目初始化
-- 搭建Kuikly项目脚手架和基础配置
-- 配置TypeScript、ESLint、Prettier等开发工具
+- 搭建 Kuikly 项目脚手架和基础配置
+- 配置 TypeScript、ESLint、Prettier 等开发工具
 - 设置项目目录结构和代码规范
-- 集成Git工作流和CI/CD流水线
+- 集成 Git 工作流和 CI/CD 流水线
 
 ### 2. 架构设计
 - 设计应用的整体架构和模块划分
@@ -55,27 +66,21 @@
 - 处理异步操作和副作用
 - 优化状态更新和派生数据计算
 
-### 5. 样式系统
-- 设计主题系统和设计令牌
-- 实现响应式布局和自适应设计
-- 处理跨浏览器兼容性问题
-- 优化CSS性能和加载策略
-
-### 6. 测试与部署
+### 5. 测试与部署
 - 编写单元测试和集成测试
 - 进行端到端测试和用户验收测试
 - 配置生产环境构建和资源优化
-- 部署到CDN和监控上线状态
+- 部署到 CDN 和监控上线状态
 
 ## 常见解决方案
 
-### 1. 组件通信
+### 组件通信
 ```typescript
 // 父子组件通信
 // ParentComponent.kuikly
 <template>
-  <ChildComponent 
-    :message="parentMessage" 
+  <ChildComponent
+    :message="parentMessage"
     @child-event="handleChildEvent"
   />
 </template>
@@ -108,7 +113,7 @@ const sendMessage = () => {
 </script>
 ```
 
-### 2. 响应式数据处理
+### 响应式数据处理
 ```typescript
 import { ref, reactive, computed, watch } from 'kuikly'
 
@@ -124,39 +129,30 @@ const isAdult = computed(() => user.age >= 18)
 watch(count, (newVal, oldVal) => {
   console.log(`Count changed from ${oldVal} to ${newVal}`)
 })
-
-watch(
-  () => user.age,
-  (newAge, oldAge) => {
-    if (newAge !== oldAge) {
-      console.log(`User age changed from ${oldAge} to ${newAge}`)
-    }
-  }
-)
 ```
 
-### 3. 自定义组合式函数
+### 自定义组合式函数
 ```typescript
 // useCounter.ts
 import { ref, computed } from 'kuikly'
 
 export function useCounter(initialValue = 0) {
   const count = ref(initialValue)
-  
+
   const doubleCount = computed(() => count.value * 2)
-  
+
   const increment = () => {
     count.value++
   }
-  
+
   const decrement = () => {
     count.value--
   }
-  
+
   const reset = (value = initialValue) => {
     count.value = value
   }
-  
+
   return {
     count,
     doubleCount,
@@ -165,16 +161,9 @@ export function useCounter(initialValue = 0) {
     reset
   }
 }
-
-// 在组件中使用
-<script setup lang="ts">
-import { useCounter } from './useCounter'
-
-const { count, doubleCount, increment, decrement, reset } = useCounter(10)
-</script>
 ```
 
-### 4. 插件开发
+### 插件开发
 ```typescript
 // plugins/i18n.ts
 import { App } from 'kuikly'
@@ -187,41 +176,22 @@ interface I18nOptions {
 export const I18nPlugin = {
   install(app: App, options: I18nOptions) {
     const { locale, messages } = options
-    
+
     app.config.globalProperties.$t = (key: string) => {
       return messages[locale]?.[key] || key
     }
-    
+
     app.provide('i18n', {
       locale,
       t: app.config.globalProperties.$t
     })
   }
 }
-
-// main.ts
-import { createApp } from 'kuikly'
-import App from './App.kuikly'
-import { I18nPlugin } from './plugins/i18n'
-
-const app = createApp(App)
-
-app.use(I18nPlugin, {
-  locale: 'zh-CN',
-  messages: {
-    'zh-CN': {
-      'welcome': '欢迎'
-    },
-    'en-US': {
-      'welcome': 'Welcome'
-    }
-  }
-})
 ```
 
 ## 性能优化技巧
 
-### 1. 组件懒加载
+### 组件懒加载
 ```typescript
 // 路由级别懒加载
 const routes = [
@@ -241,7 +211,7 @@ const AsyncComponent = defineAsyncComponent(() =>
 </script>
 ```
 
-### 2. 虚拟列表
+### 虚拟列表
 ```typescript
 // useVirtualList.ts
 import { ref, computed, onMounted, onUnmounted } from 'kuikly'
@@ -249,53 +219,35 @@ import { ref, computed, onMounted, onUnmounted } from 'kuikly'
 export function useVirtualList(list: any[], itemHeight: number, containerHeight: number) {
   const scrollTop = ref(0)
   const containerRef = ref<HTMLElement>()
-  
-  const startIndex = computed(() => 
+
+  const startIndex = computed(() =>
     Math.floor(scrollTop.value / itemHeight)
   )
-  
-  const endIndex = computed(() => 
+
+  const endIndex = computed(() =>
     Math.min(
       startIndex.value + Math.ceil(containerHeight / itemHeight) + 1,
       list.length
     )
   )
-  
-  const visibleItems = computed(() => 
+
+  const visibleItems = computed(() =>
     list.slice(startIndex.value, endIndex.value)
   )
-  
-  const totalHeight = computed(() => list.length * itemHeight)
-  const offsetHeight = computed(() => startIndex.value * itemHeight)
-  
-  const handleScroll = () => {
-    if (containerRef.value) {
-      scrollTop.value = containerRef.value.scrollTop
-    }
-  }
-  
-  onMounted(() => {
-    containerRef.value?.addEventListener('scroll', handleScroll)
-  })
-  
-  onUnmounted(() => {
-    containerRef.value?.removeEventListener('scroll', handleScroll)
-  })
-  
+
   return {
     containerRef,
     visibleItems,
-    totalHeight,
-    offsetHeight
+    totalHeight: computed(() => list.length * itemHeight),
+    offsetHeight: computed(() => startIndex.value * itemHeight)
   }
 }
 ```
 
 ## 测试策略
 
-### 1. 单元测试
+### 单元测试
 ```typescript
-// tests/components/Counter.spec.ts
 import { mount } from '@kuikly/test-utils'
 import Counter from '@/components/Counter.kuikly'
 
@@ -304,69 +256,38 @@ describe('Counter', () => {
     const wrapper = mount(Counter, {
       props: { initialCount: 5 }
     })
-    
+
     expect(wrapper.text()).toContain('Count: 5')
   })
-  
+
   it('increments count when button clicked', async () => {
     const wrapper = mount(Counter)
-    
+
     await wrapper.find('button').trigger('click')
-    
+
     expect(wrapper.text()).toContain('Count: 1')
-  })
-})
-```
-
-### 2. 组件测试
-```typescript
-// tests/components/FormInput.spec.ts
-import { mount } from '@kuikly/test-utils'
-import FormInput from '@/components/FormInput.kuikly'
-
-describe('FormInput', () => {
-  it('emits input event when value changes', async () => {
-    const wrapper = mount(FormInput)
-    
-    await wrapper.find('input').setValue('test value')
-    
-    expect(wrapper.emitted('input')).toBeTruthy()
-    expect(wrapper.emitted('input')[0]).toEqual(['test value'])
-  })
-  
-  it('validates required field', async () => {
-    const wrapper = mount(FormInput, {
-      props: { required: true }
-    })
-    
-    await wrapper.find('input').setValue('')
-    await wrapper.find('input').trigger('blur')
-    
-    expect(wrapper.find('.error-message').exists()).toBe(true)
   })
 })
 ```
 
 ## 项目配置
 
-### 1. kuikly.config.js
+### kuikly.config.js
 ```javascript
 export default {
   // 编译配置
   compilerOptions: {
     isCustomElement: tag => tag.includes('-')
   },
-  
+
   // 全局配置
   globalProperties: {
     $appVersion: '1.0.0'
   },
-  
+
   // 插件配置
-  plugins: [
-    // 插件列表
-  ],
-  
+  plugins: [],
+
   // 构建优化
   build: {
     rollupOptions: {
@@ -380,16 +301,3 @@ export default {
   }
 }
 ```
-
-### 2. tsconfig.json
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-    "types": ["kuikly"],
-    
-    /* Bun
