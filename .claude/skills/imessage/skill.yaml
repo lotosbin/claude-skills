@@ -1,0 +1,42 @@
+name: imessage
+description: 发送iMessage消息
+version: 1.0.0
+language: zh-CN
+
+triggers:
+  - when: user mentions "imessage" or "iMessage" or "发送消息"
+  - when: user mentions "send message" or "发消息"
+
+parameters:
+  - name: recipient
+    type: string
+    description: 收件人手机号或Apple ID
+    required: true
+  - name: message
+    type: string
+    description: 要发送的消息内容
+    required: true
+
+steps:
+  - name: validate_recipient
+    description: 验证收件人信息
+    action: validate
+    validation:
+      - pattern: "^\\+?[1-9]\\d{1,14}$"
+        message: "手机号格式不正确，应为国际格式如 +86138xxxxxx"
+      - pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        message: "Apple ID格式不正确"
+
+  - name: send_imessage
+    description: 发送iMessage
+    action: execute
+    script: send_imessage.py
+    args:
+      recipient: ${recipient}
+      message: ${message}
+
+  - name: confirm_send
+    description: 确认发送结果
+    action: report
+    format: success
+    message: "iMessage已成功发送给 ${recipient}"
